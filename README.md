@@ -2,8 +2,8 @@
 
 The Crypto Frequency Analyzer is a comprehensive tool specifically designed for the analysis and decryption of mono-character encoded ciphers. The name speaks to its primary function of analyzing the frequency of characters within an encrypted message, a common technique used in cryptanalysis to break codes and ciphers.
  
-![view](https://github.com/ajay-2345/-Crypto-Frequency-Analyzer/assets/10467068/f24b081b-fd3d-4e8f-ae15-e697e4477be2)
- 
+![view](https://github.com/ajay-2345/-Crypto-Frequency-Analyzer/assets/10467068/916f770d-07d6-4686-9e16-ad1aa1ae5c37)
+
  
 #1. The interface of the Crypto Frequency Analyzer is highly interactive and user-friendly. It features multiple display boxes to streamline the decryption process. The first box is designed for input, allowing users to enter the encrypted text they wish to decode. This can include messages that have been encoded using a variety of mono-character encryption methods.
  
