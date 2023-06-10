@@ -1,0 +1,255 @@
+<html>
+<body>
+
+<head>
+
+
+<link rel="stylesheet" href="./assets/jquery.ui.theme.min.css">
+<link rel="stylesheet" href="./assets/bootstrap.min.css">
+
+<script src="./assets/jquery.js" ></script>
+
+
+</head>
+
+<br>
+
+<table class="table">
+	<tr>
+		<td id='fa-1'>0</td>
+		<td id='fa-2'>0</td>
+		<td id='fa-3'>0</td>
+		<td id='fa-4'>0</td>
+		<td id='fa-5'>0</td>
+		<td id='fa-6'>0</td>
+		<td id='fa-7'>0</td>
+		<td id='fa-8'>0</td>
+		<td id='fa-9'>0</td>
+		<td id='fa-10'>0</td>
+		<td id='fa-11'>0</td>
+		<td id='fa-12'>0</td>
+		<td id='fa-13'>0</td>
+		<td id='fa-14'>0</td>
+		<td id='fa-15'>0</td>
+		<td id='fa-16'>0</td>
+		<td id='fa-17'>0</td>
+		<td id='fa-18'>0</td>
+		<td id='fa-19'>0</td>
+		<td id='fa-20'>0</td>
+		<td id='fa-21'>0</td>
+		<td id='fa-22'>0</td>
+		<td id='fa-23'>0</td>
+		<td id='fa-24'>0</td>
+		<td id='fa-25'>0</td>
+		<td id='fa-26'>0</td>
+	</tr>
+	<tr>
+		<td id='alpha-1'>A</td>
+		<td id='alpha-2'>B</td>
+		<td id='alpha-3'>C</td>
+		<td id='alpha-4'>D</td>
+		<td id='alpha-5'>E</td>
+		<td id='alpha-6'>F</td>
+		<td id='alpha-7'>G</td>
+		<td id='alpha-8'>H</td>
+		<td id='alpha-9'>I</td>
+		<td id='alpha-10'>J</td>
+		<td id='alpha-11'>K</td>
+		<td id='alpha-12'>L</td>
+		<td id='alpha-13'>M</td>
+		<td id='alpha-14'>N</td>
+		<td id='alpha-15'>O</td>
+		<td id='alpha-16'>P</td>
+		<td id='alpha-17'>Q</td>
+		<td id='alpha-18'>R</td>
+		<td id='alpha-19'>S</td>
+		<td id='alpha-20'>T</td>
+		<td id='alpha-21'>U</td>
+		<td id='alpha-22'>V</td>
+		<td id='alpha-23'>W</td>
+		<td id='alpha-24'>X</td>
+		<td id='alpha-25'>Y</td>
+		<td id='alpha-26'>Z</td>
+	</tr>
+<table>
+
+<hr>
+<p>Replace  
+	<select name="dpCipher" id="dpCipher">
+		<option value="">-</option>
+		<option value="A">A</option>
+		<option value="B">B</option>
+		<option value="C">C</option>
+		<option value="D">D</option>
+		<option value="E">E</option>
+		<option value="F">F</option>
+		<option value="G">G</option>
+		<option value="H">H</option>
+		<option value="I">I</option>
+		<option value="J">J</option>
+		<option value="K">K</option>
+		<option value="L">L</option>
+		<option value="M">M</option>
+		<option value="N">N</option>
+		<option value="O">O</option>
+		<option value="P">P</option>
+		<option value="Q">Q</option>
+		<option value="R">R</option>
+		<option value="S">S</option>
+		<option value="T">T</option>
+		<option value="U">U</option>
+		<option value="V">V</option>
+		<option value="W">W</option>
+		<option value="X">X</option>
+		<option value="Y">Y</option>
+		<option value="Z">Z</option>
+	</select> 
+  
+  with 
+  
+  <select name="dpPlain" id="dpPlain">
+  		<option value="">-</option>
+		<option value="a">a</option>
+		<option value="b">b</option>
+		<option value="c">c</option>
+		<option value="d">d</option>
+		<option value="e">e</option>
+		<option value="f">f</option>
+		<option value="g">g</option>
+		<option value="h">h</option>
+		<option value="i">i</option>
+		<option value="j">j</option>
+		<option value="k">k</option>
+		<option value="l">l</option>
+		<option value="m">m</option>
+		<option value="n">n</option>
+		<option value="o">o</option>
+		<option value="p">p</option>
+		<option value="q">q</option>
+		<option value="r">r</option>
+		<option value="s">s</option>
+		<option value="t">t</option>
+		<option value="u">u</option>
+		<option value="v">v</option>
+		<option value="w">w</option>
+		<option value="x">x</option>
+		<option value="y">y</option>
+		<option value="z">z</option>
+	</select> 
+  
+	
+	<button onclick="replaceLetter()"> Swap Letter </button>
+  
+ </p>
+<br>
+
+
+<table>
+	<tr style="font-size: 20px;font-weight: 500;">
+		<td>CipherText</td>	<td>PlainText</td>	<td>Track Letters</td>
+	</tr>
+	<tr>
+	<td><textarea id="input" rows="20" cols="65" onchange="getFrequency()"  placeholder="your cipher text here..."></textarea></td>
+	<td><textarea id="inputPlaintext" rows="20" cols="65" style="font-family: monospace; font-size: 15px;" placeholder="after swaping letters you will get updated text here..."></textarea></td>
+	<td><textarea id="inputTracking" rows="20" cols="25" placeholder="here you will be getting information about your swapped letters to track them..."></textarea></td>
+</tr>
+</table>
+
+<script>
+
+let alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+let count = {};
+ 
+function getFrequency(){
+
+	var input = $("#input").val();
+	$("#inputPlaintext").val(input);
+	//console.log(input);
+	
+	for (let i = 0; i < input.length; i++) {
+	  let char = input[i].toLowerCase();
+	  if (/[a-z]/.test(char)) { 
+		if (count[char] === undefined) {
+		  count[char] = 1;
+		} else {
+		  count[char]++;
+		}
+	  }
+	}
+
+	let freqList = Object.entries(count);
+    
+    // Sort the array by the letters (alphabetically)
+    //freqList.sort((a, b) => a[0].localeCompare(b[0]));
+	
+	// sort by occurance:
+	freqList.sort((a, b) => b[1] - a[1]);
+	
+	//console.log("XX:");
+	//console.log(freqList);
+	
+	for(var i=0;i<26;i++){
+		$("#fa-"+(i+1)).text("");
+		$("#alpha-"+(i+1)).text("");
+	}
+	
+	var index=1;
+	for (let key in freqList) {
+		//if (freqList.hasOwnProperty(key)) { // make sure the key is not from the prototype
+			
+			//console.log("Key:", key, "Value:", count[key]);		
+			var itemvalue = freqList[key];
+			//console.log(itemvalue);
+			$("#alpha-"+index).text(itemvalue[0].toUpperCase());
+			$("#fa-"+index).text(itemvalue[1]);
+			
+			index++;
+		//}
+	}
+	
+	//
+	//console.log(freqList);
+}
+
+
+var CharCipher="";
+var CharPlainText="";
+
+$('#dpCipher').on('change', function() {
+   CharCipher = this.value;
+});
+
+$('#dpPlain').on('change', function() {
+  //alert( this.value );
+  CharPlainText = this.value;
+});
+
+
+function replaceLetter(){
+
+	if( $("#input").val() == "" || $("#inputPlaintext").val() == "" ){
+		alert("Input field should not be empty.");
+		return ;
+	}
+
+	if(CharCipher == "" || CharPlainText == "" ){
+		alert("Please select letters to swap.");
+		return ;
+	}
+
+	var text = $("#inputPlaintext").val();	
+	
+	//(/X/g, 'A');
+	text = text.replaceAll(CharCipher, CharPlainText);
+	$("#inputPlaintext").val(text);
+	
+	var entery = CharCipher + " - " + CharPlainText + "\n";
+	var listText = $("#inputTracking").val();
+	listText = listText+ "\n" + entery;
+	$("#inputTracking").val(listText);
+}
+
+</script>
+
+</body>
+</html>
